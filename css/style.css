@@ -101,3 +101,25 @@ footer p {
     font-size: 1rem; /* Меньше размер текста */
   }
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+}
