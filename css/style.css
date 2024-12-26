@@ -2,11 +2,17 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Заголовок */
 header {
   background: linear-gradient(45deg, #007bff, #6610f2);
   color: white;
+  padding: 50px 0;
+  text-align: center;
 }
 
 header h1 {
@@ -28,6 +34,10 @@ header p {
 .card {
   border: none;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -35,13 +45,22 @@ header p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
 .card-title {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #007bff;
+  margin-bottom: 10px;
 }
 
 .card-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #6c757d;
 }
 
@@ -50,6 +69,7 @@ footer {
   background-color: #303030;
   color: #2b2b2b;
   padding: 10px 0;
+  text-align: center;
 }
 
 footer p {
@@ -58,68 +78,74 @@ footer p {
 
 /* Общие стили для блока с курсами валют */
 #currency-rates {
-  background-color: #f8f9fa; /* Светлый фон для блока */
-  border: 1px solid #ddd; /* Легкая граница */
-  border-radius: 8px; /* Закругленные углы */
-  padding: 20px; /* Отступы внутри блока */
-  margin: 20px 0; /* Отступы снаружи блока */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
-  display: flex; /* Используем Flexbox */
-  flex-direction: column; /* Располагаем элементы по вертикали */
-  align-items: center; /* Центрируем элементы по горизонтали */
-  text-align: center; /* Центрируем текст внутри каждого элемента */
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 #currency-rates h2 {
-  font-size: 1.75rem; /* Размер заголовка */
-  color: #007bff; /* Цвет заголовка */
-  margin-bottom: 15px; /* Отступ снизу */
+  font-size: 1.75rem;
+  color: #007bff;
+  margin-bottom: 15px;
 }
 
 #currency-rates p {
-  font-size: 1.1rem; /* Размер шрифта для текста */
-  color: #333; /* Цвет текста */
-  margin-bottom: 10px; /* Отступ снизу */
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 #currency-rates span {
-  font-weight: bold; /* Сделаем курс валют жирным */
-  color: #28a745; /* Цвет для курсов */
+  font-weight: bold;
+  color: #28a745;
 }
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   #currency-rates {
-    padding: 15px; /* Меньше отступов на мобильных */
+    padding: 15px;
   }
 
   #currency-rates h2 {
-    font-size: 1.5rem; /* Меньше размер заголовка на мобильных */
+    font-size: 1.5rem;
   }
 
   #currency-rates p {
-    font-size: 1rem; /* Меньше размер текста */
+    font-size: 1rem;
   }
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.card-body {
-  flex-grow: 1;
+/* Выравнивание контента на главной странице */
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 }
 
-.card-title {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.card-text {
-  font-size: 1rem;
+.col-md-3 {
+  flex: 1 1 calc(25% - 20px);
+  max-width: 25%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .col-md-3 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
