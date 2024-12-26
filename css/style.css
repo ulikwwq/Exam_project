@@ -120,6 +120,23 @@ footer p {
   #currency-rates p {
     font-size: 1rem;
   }
+
+  /* Исправление положения кнопки меню */
+  .navbar-toggler {
+    position: absolute;
+    right: 20px; /* Устанавливаем её в правый верхний угол */
+    top: 20px;
+  }
+
+  /* Центрирование навигации */
+  .navbar-collapse {
+    text-align: center;
+  }
+
+  /* Убираем лишние отступы в header */
+  header {
+    padding: 20px 0;
+  }
 }
 
 /* Выравнивание контента на главной странице */
