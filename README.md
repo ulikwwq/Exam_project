@@ -13,7 +13,7 @@ A static responsive website with useful tools like a password generator, currenc
 - Hosted on GitHub Pages
 
 ## Live Demo
-[Live Site URL](https://your-live-site-url.com)
+[Live Site URL](https://ulikwwq.github.io/Exam_project/)
 
 ## Repository
-[GitHub Repository](https://github.com/your-repo-link)
+[GitHub Repository](https://github.com/ulikwwq/Exam_project)
