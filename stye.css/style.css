@@ -24,4 +24,9 @@ body {
   .container {
     max-width: 960px;
   }
-  
+
+  footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
