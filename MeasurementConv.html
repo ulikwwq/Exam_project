@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Toolbox</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="password.html">Password Generator</a></li>
+              <li class="nav-item"><a class="nav-link" href="converter.html">Currency Converter</a></li>
+              <li class="nav-item"><a class="nav-link" href="calculator.html">Calculator</a></li>
+              <li class="nav-item"><a class="nav-link" href="MeasurementConv.html">Unit Converter</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+  <main class="container my-5">
+    <h1>Unit Converter</h1>
+    
+    <!-- Length Converter -->
+    <section id="length-converter">
+      <h3>Length Converter</h3>
+      <div class="mb-3">
+        <label for="lengthValue" class="form-label">Enter value:</label>
+        <input type="number" id="lengthValue" class="form-control" placeholder="Enter length">
+      </div>
+      <div class="mb-3">
+        <label for="lengthFrom" class="form-label">From:</label>
+        <select id="lengthFrom" class="form-select">
+          <option value="meters">Meters</option>
+          <option value="kilometers">Kilometers</option>
+          <option value="centimeters">Centimeters</option>
+          <option value="millimeters">Millimeters</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="lengthTo" class="form-label">To:</label>
+        <select id="lengthTo" class="form-select">
+          <option value="meters">Meters</option>
+          <option value="kilometers">Kilometers</option>
+          <option value="centimeters">Centimeters</option>
+          <option value="millimeters">Millimeters</option>
+        </select>
+      </div>
+      <button id="convertLengthBtn" class="btn btn-primary">Convert</button>
+      <div class="mt-3">
+        <label class="form-label">Converted Length:</label>
+        <input type="text" id="lengthResult" class="form-control" readonly>
+      </div>
+    </section>
+
+    <!-- Mass Converter -->
+    <section id="mass-converter" class="mt-5">
+      <h3>Mass Converter</h3>
+      <div class="mb-3">
+        <label for="massValue" class="form-label">Enter value:</label>
+        <input type="number" id="massValue" class="form-control" placeholder="Enter mass">
+      </div>
+      <div class="mb-3">
+        <label for="massFrom" class="form-label">From:</label>
+        <select id="massFrom" class="form-select">
+          <option value="grams">Grams</option>
+          <option value="kilograms">Kilograms</option>
+          <option value="milligrams">Milligrams</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="massTo" class="form-label">To:</label>
+        <select id="massTo" class="form-select">
+          <option value="grams">Grams</option>
+          <option value="kilograms">Kilograms</option>
+          <option value="milligrams">Milligrams</option>
+        </select>
+      </div>
+      <button id="convertMassBtn" class="btn btn-primary">Convert</button>
+      <div class="mt-3">
+        <label class="form-label">Converted Mass:</label>
+        <input type="text" id="massResult" class="form-control" readonly>
+      </div>
+    </section>
+
+    <!-- Temperature Converter -->
+    <section id="temp-converter" class="mt-5">
+      <h3>Temperature Converter</h3>
+      <div class="mb-3">
+        <label for="tempValue" class="form-label">Enter temperature:</label>
+        <input type="number" id="tempValue" class="form-control" placeholder="Enter temperature">
+      </div>
+      <div class="mb-3">
+        <label for="tempFrom" class="form-label">From:</label>
+        <select id="tempFrom" class="form-select">
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="tempTo" class="form-label">To:</label>
+        <select id="tempTo" class="form-select">
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+      </div>
+      <button id="convertTempBtn" class="btn btn-primary">Convert</button>
+      <div class="mt-3">
+        <label class="form-label">Converted Temperature:</label>
+        <input type="text" id="tempResult" class="form-control" readonly>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3 mt-auto">
+    <p>&copy; 2024 Mini Toolbox. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Length Conversion Logic
+document.getElementById('convertLengthBtn').addEventListener('click', function () {
+  const value = parseFloat(document.getElementById('lengthValue').value);
+  const fromUnit = document.getElementById('lengthFrom').value;
+  const toUnit = document.getElementById('lengthTo').value;
+  let result = value;
+
+  if (fromUnit === "meters" && toUnit === "kilometers") {
+    result = value / 1000;
+  } else if (fromUnit === "meters" && toUnit === "centimeters") {
+    result = value * 100;
+  } else if (fromUnit === "meters" && toUnit === "millimeters") {
+    result = value * 1000;
+  }
+  // Add other unit conversion logic here...
+
+  document.getElementById('lengthResult').value = result.toFixed(2);
+});
+
+// Mass Conversion Logic
+document.getElementById('convertMassBtn').addEventListener('click', function () {
+  const value = parseFloat(document.getElementById('massValue').value);
+  const fromUnit = document.getElementById('massFrom').value;
+  const toUnit = document.getElementById('massTo').value;
+  let result = value;
+
+  if (fromUnit === "grams" && toUnit === "kilograms") {
+    result = value / 1000;
+  } else if (fromUnit === "grams" && toUnit === "milligrams") {
+    result = value * 1000;
+  }
+  // Add other mass conversion logic here...
+
+  document.getElementById('massResult').value = result.toFixed(2);
+});
+
+// Temperature Conversion Logic
+document.getElementById('convertTempBtn').addEventListener('click', function () {
+  const value = parseFloat(document.getElementById('tempValue').value);
+  const fromUnit = document.getElementById('tempFrom').value;
+  const toUnit = document.getElementById('tempTo').value;
+  let result = value;
+
+  if (fromUnit === "Celsius" && toUnit === "Fahrenheit") {
+    result = (value * 9/5) + 32;
+  } else if (fromUnit === "Celsius" && toUnit === "Kelvin") {
+    result = value + 273.15;
+  }
+  // Add other temperature conversion logic here...
+
+  document.getElementById('tempResult').value = result.toFixed(2);
+});
+
+  </script>
+</body>
+</html>
